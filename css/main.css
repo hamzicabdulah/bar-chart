@@ -1,0 +1,35 @@
+body {
+  background: #E0E0E0;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  margin: 0;
+}
+svg {
+  background: white;
+  box-shadow: 1.5px 2px 2px #b3b3b3;
+}
+h1 {
+  font-family: 'Crete Round', serif;
+  color: #19334d;
+}
+rect:hover {
+  fill: #ff9999;
+}
+.d3-tip {
+  background: white;
+  padding: .5em;
+  border-radius: 5%;
+  box-shadow: 2.5px 3px 2px #888888;
+}
+.d3-tip h3, .d3-tip p {
+  margin: 0;
+}
+.d3-tip h3 {
+  margin-bottom: .25em;
+}
+.footer {
+  background: #19334d;
+  color: white;
+  padding: 1.3em;
+  margin-bottom: 0;
+}
