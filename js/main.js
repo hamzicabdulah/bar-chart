@@ -1,5 +1,8 @@
 function draw(dataset) {
-  const width = 1000, height = 580, margin = 50;
+  var docWidth = document.documentElement.clientWidth;
+
+  const width = (docWidth <= 768) ? docWidth/1.1 : docWidth/1.35;
+  const height = (docWidth <= 768) ? width : width * 0.56, margin = 50;
 
   d3.select('body')
     .append('h1')
