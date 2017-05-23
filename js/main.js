@@ -42,9 +42,7 @@ function draw(dataset) {
   const tip = d3.tip()
     .attr('class', 'd3-tip')
     .offset([-5, 0])
-    .html(function(d) {
-      return '<h3>$' + d[1].toFixed(2) + ' Billion </h3><p>' + new Date(d[0]).getFullYear() + ' — ' + months[new Date(d[0]).getMonth()] + '</p>';
-    });
+    .html((d) => '<h3>$' + d[1].toFixed(2) + ' Billion </h3><p>' + new Date(d[0]).getFullYear() + ' — ' + months[new Date(d[0]).getMonth()] + '</p>');
   svg.call(tip);
 
   svg.selectAll('rect')
