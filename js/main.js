@@ -1,11 +1,14 @@
+const data = d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json', draw);
+
 function draw(dataset) {
   var docWidth = document.documentElement.clientWidth;
 
   const width = (docWidth <= 768) ? docWidth/1.1 : docWidth/1.35;
-  const height = (docWidth <= 768) ? width : width * 0.56, margin = 50;
+  const height = (docWidth <= 900) ? width : width * 0.56, margin = 50;
 
   d3.select('body')
     .append('h1')
+    .attr('class', 'header')
     .text('Gross Domestic Product');
 
   const svg = d3.select('body')
@@ -69,6 +72,15 @@ function draw(dataset) {
     .text(`Units: Billions of Dollars Seasonal Adjustment: Seasonally Adjusted Annual Rate Notes:
       A Guide to the National Income and Product Accounts of the United States (NIPA)
       - (http://www.bea.gov/national/pdf/nipaguid.pdf)`);
+
+  window.onresize = function(event) {
+      clearScreen();
+      draw(dataset);
+    }
 }
 
-const data = d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json', draw);
+function clearScreen() {
+  d3.select('.header').remove();
+  d3.select('svg').remove();
+  d3.select('.footer').remove();
+}
